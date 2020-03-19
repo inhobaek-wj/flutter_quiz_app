@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp()); // runApp builds the main widget and calls build() on it.
-}
+// void main() {
+//   runApp(MyApp()); // runApp builds the main widget and calls build() on it.
+// }
+
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
 
