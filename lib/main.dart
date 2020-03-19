@@ -16,7 +16,12 @@ class MyApp extends StatelessWidget {
     // home is core widget which flutter brings out of the screen, and it's named arg.
     return MaterialApp(home: Scaffold(
         appBar: AppBar(title: Text('My First App'),),
-        body: Text('This is body...'),
+        body: Column(children: <Widget>[
+            Text('The Questin!'),
+            RaisedButton(child: Text('Answer 1'), onPressed: null),
+            RaisedButton(child: Text('Answer 2'), onPressed: null),
+            RaisedButton(child: Text('Answer 3'), onPressed: null),
+        ],),
     ),);
   }
 
