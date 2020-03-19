@@ -13,14 +13,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) { // Widget is the core UI building block.
 
+    void answerQuetion() => print('Answer chosen!');
+
     // home is core widget which flutter brings out of the screen, and it's named arg.
     return MaterialApp(home: Scaffold(
         appBar: AppBar(title: Text('My First App'),),
         body: Column(children: <Widget>[
             Text('The Questin!'),
-            RaisedButton(child: Text('Answer 1'), onPressed: null),
-            RaisedButton(child: Text('Answer 2'), onPressed: null),
-            RaisedButton(child: Text('Answer 3'), onPressed: null),
+            RaisedButton(child: Text('Answer 1'), onPressed: answerQuetion),
+            RaisedButton(child: Text('Answer 2'), onPressed: answerQuetion),
+            RaisedButton(child: Text('Answer 3'), onPressed: answerQuetion),
         ],),
     ),);
   }
