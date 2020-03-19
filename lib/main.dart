@@ -14,7 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) { // Widget is the core UI building block.
 
     // home is core widget which flutter brings out of the screen, and it's named arg.
-    return MaterialApp(home: Text('Hello, Dart!'),);
+    return MaterialApp(home: Scaffold(
+        appBar: AppBar(title: Text('My First App'),),
+        body: Text('This is body...'),
+    ),);
   }
 
 }
