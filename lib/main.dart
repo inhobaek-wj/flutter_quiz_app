@@ -44,9 +44,9 @@ class _MyAppState extends State<MyApp> { // State is generic, so it needs class 
         appBar: AppBar(title: Text('My First App'),),
         body: Column(children: <Widget>[
             Question(_questions[_questionIndex]),
-            Answer(),
-            Answer(),
-            Answer(),
+            Answer(answerQuetion),
+            Answer(answerQuetion),
+            Answer(answerQuetion),
         ],),
     ),);
   }
