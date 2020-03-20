@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './question.dart';
-import './answer.dart';
+import 'quiz.dart';
+import 'result.dart';
 
 // void main() {
 //   runApp(MyApp()); // runApp builds the main widget and calls build() on it.
@@ -39,25 +39,23 @@ class _MyAppState extends State<MyApp> { // State is generic, so it needs class 
       },
     ];
 
-    void answerQuetion() {
+    void answerHandler() {
       //setState() is a "trigger" that informs Flutter that it needs to re-run build() of the Widget.
       setState(() {
           _questionIndex = _questionIndex + 1;
       });
-      print(_questionIndex);
     }
 
     // home is core widget which flutter brings out of the screen, and it's named arg.
     return MaterialApp(home: Scaffold(
         appBar: AppBar(title: Text('My First App'),),
         body: _questionIndex < _questions.length ?
-        Column(children: <Widget>[
-            Question(_questions[_questionIndex]['questionText']),
-            ...(_questions[_questionIndex]['answers'] as List<String>).map((answer) {
-                return Answer(answerQuetion, answer);
-            }).toList()
-          ],
-        ) : Center(child: Text('You are done!')),
+        Quiz(
+          questions: _questions,
+          questionIndex: _questionIndex,
+          answerHandler: answerHandler,
+        )
+        : Result(),
       ),
     );
   }
