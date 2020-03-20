@@ -50,13 +50,14 @@ class _MyAppState extends State<MyApp> { // State is generic, so it needs class 
     // home is core widget which flutter brings out of the screen, and it's named arg.
     return MaterialApp(home: Scaffold(
         appBar: AppBar(title: Text('My First App'),),
-        body: Column(children: <Widget>[
+        body: _questionIndex < _questions.length ?
+        Column(children: <Widget>[
             Question(_questions[_questionIndex]['questionText']),
             ...(_questions[_questionIndex]['answers'] as List<String>).map((answer) {
                 return Answer(answerQuetion, answer);
             }).toList()
           ],
-        ),
+        ) : Center(child: Text('You are done!')),
       ),
     );
   }
