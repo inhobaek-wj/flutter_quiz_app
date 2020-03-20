@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './question.dart';
+
 // void main() {
 //   runApp(MyApp()); // runApp builds the main widget and calls build() on it.
 // }
@@ -40,7 +42,7 @@ class _MyAppState extends State<MyApp> { // State is generic, so it needs class 
     return MaterialApp(home: Scaffold(
         appBar: AppBar(title: Text('My First App'),),
         body: Column(children: <Widget>[
-            Text(_questions[_questionIndex]),
+            Question(_questions[_questionIndex]),
             RaisedButton(child: Text('Answer 1'), onPressed: answerQuetion),
             RaisedButton(child: Text('Answer 2'), onPressed: answerQuetion),
             RaisedButton(child: Text('Answer 3'), onPressed: answerQuetion),
