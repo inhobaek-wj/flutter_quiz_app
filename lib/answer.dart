@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
 
-  final Function selectHandler;
+  final Function selectHandler; // final is rundite constant value. It can be initiated.
   final String answerText;
 
   Answer(this.selectHandler, this.answerText);

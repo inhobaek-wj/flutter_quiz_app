@@ -20,23 +20,24 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> { // State is generic, so it needs class pointer. Connection fo Widget.
 
-  var _questions = [
-    {'questionText': 'What is yout favorite color?',
-      'answers': ['Red', 'Blue', 'Black', 'Purple']
-    },
-    {'questionText': 'What is your favorite animal?',
-      'answers': ['Pig', 'Dog', 'Rabbit', 'Lion']
-    },
-    {'questionText': 'What is your favorite movie?',
-      'answers': ['Parasite', 'Super map', 'Bat man', 'Iron man']
-    },
-  ];
   int _questionIndex = 0;
 
   // this method is automatically called by flutter.
   // it returns a so-colled "widget-tree" which tells Flutter what to draw onto the screen.
   @override
   Widget build(BuildContext context) { // Widget is the core UI building block.
+
+    const _questions = [ // const is compile time constant value.
+      {'questionText': 'What is yout favorite color?',
+        'answers': ['Red', 'Blue', 'Black', 'Purple']
+      },
+      {'questionText': 'What is your favorite animal?',
+        'answers': ['Pig', 'Dog', 'Rabbit', 'Lion']
+      },
+      {'questionText': 'What is your favorite movie?',
+        'answers': ['Parasite', 'Super map', 'Bat man', 'Iron man']
+      },
+    ];
 
     void answerQuetion() {
       //setState() is a "trigger" that informs Flutter that it needs to re-run build() of the Widget.
