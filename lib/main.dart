@@ -21,8 +21,15 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> { // State is generic, so it needs class pointer. Connection fo Widget.
 
   var _questions = [
-    'What is yout favorite color?',
-    'What is your favorite animal?'
+    {'questionText': 'What is yout favorite color?',
+      'answers': ['Red', 'Blue', 'Black', 'Purple']
+    },
+    {'questionText': 'What is your favorite animal?',
+      'answers': ['Pig', 'Dog', 'Rabbit', 'Lion']
+    },
+    {'questionText': 'What is your favorite movie?',
+      'answers': ['Parasite', 'Super map', 'Bat man', 'Iron man']
+    },
   ];
   int _questionIndex = 0;
 
@@ -43,12 +50,14 @@ class _MyAppState extends State<MyApp> { // State is generic, so it needs class 
     return MaterialApp(home: Scaffold(
         appBar: AppBar(title: Text('My First App'),),
         body: Column(children: <Widget>[
-            Question(_questions[_questionIndex]),
-            Answer(answerQuetion),
-            Answer(answerQuetion),
-            Answer(answerQuetion),
-        ],),
-    ),);
+            Question(_questions[_questionIndex]['questionText']),
+            ...(_questions[_questionIndex]['answers'] as List<String>).map((answer) {
+                return Answer(answerQuetion, answer);
+            }).toList()
+          ],
+        ),
+      ),
+    );
   }
 
 }
