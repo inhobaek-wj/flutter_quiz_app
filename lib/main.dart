@@ -39,6 +39,12 @@ class _MyAppState extends State<MyApp> { // State is generic, so it needs class 
       },
     ];
 
+    void _resetQuiz() {
+      setState(() {
+          _questionIndex = 0;
+      });
+    }
+
     void answerHandler() {
       //setState() is a "trigger" that informs Flutter that it needs to re-run build() of the Widget.
       setState(() {
@@ -55,7 +61,7 @@ class _MyAppState extends State<MyApp> { // State is generic, so it needs class 
           questionIndex: _questionIndex,
           answerHandler: answerHandler,
         )
-        : Result(),
+        : Result(_resetQuiz),
       ),
     );
   }
