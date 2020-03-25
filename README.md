@@ -14,3 +14,16 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## mainly used Widgets
+- StatelessWidget
+- StatefulWidget (main.dart)
+
+- Center (result.dart)
+- Column (quiz.dart)
+- Container (answer.dart, question.dart)
+- FlatButton (result.dart)
+- RaisedButton (answer.dart)
+- Text (question.dart)
+
+
